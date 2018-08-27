@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Item list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="controller.js"></script>
+</head>
+
+<body>
+    <div class="main" ng-app="myList" ng-controller="myListController">
+        <h1>Items List</h1>
+        <div class="addItem">
+            <input type="text" placeholder="Add item" class="addText" ng-model="iName">
+            <button ng-click="add(iName)">Add</button>
+        </div>
+        <ul>
+            <li ng-repeat="item in items">{{item}}
+                <span ng-click="remove($index)">x</span>
+            </li>
+
+        </ul>
+    </div>
+
+</body>
+
+</html>
